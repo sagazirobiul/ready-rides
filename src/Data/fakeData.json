@@ -1,0 +1,39 @@
+[{
+    "id": 1,
+    "image": "https://powersports.honda.com/-/media/products/family/rebel-300/trims/trim-main/rebel-300/2021/2021-rebel-300-pearl_blue-650x380.png",
+    "name": "Motorcycle",
+    "more":[
+      {"passenger": 1, "price": 30},
+      {"passenger": 2, "price": 55}
+    ]
+  }, {
+    "id": 2,
+    "image": "https://di-uploads-pod4.dealerinspire.com/mcgrathacuraofwestmont/uploads/2017/07/2018-Audi-A4-2.png",
+    "name": "Car",
+    "more":[
+      {"passenger": 1, "price": 25},
+      {"passenger": 2, "price": 45},
+      {"passenger": 3, "price": 67},
+      {"passenger": 4, "price": 88}
+    ]
+  }, {
+    "id": 3,
+    "image": "https://www.uttaramotorsltd.com/wp-content/uploads/2015/12/LT-Bus.png",
+    "name": "Bus",
+    "more":[
+      {"passenger": 3, "price": 45},
+      {"passenger": 6, "price": 80},
+      {"passenger": 10, "price": 110},
+      {"passenger": 15, "price": 140}
+    ]
+  }, {
+    "id": 4,
+    "image": "https://media.istockphoto.com/photos/modern-high-speed-train-picture-id186147581?k=6&m=186147581&s=612x612&w=0&h=6MiPc90vzCpBrcNiHzJQP7c9SDESJp4axvN8uVkFdjg=",
+    "name": "Train",
+    "more":[
+      {"passenger": 7, "price": 50},
+      {"passenger": 15, "price": 90},
+      {"passenger": 20, "price": 120},
+      {"passenger": 25, "price": 150}
+    ]
+  }]
