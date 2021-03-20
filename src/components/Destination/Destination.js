@@ -6,7 +6,8 @@ import DestinationInfo from '../DestinationInfo/DestinationInfo';
 import './Destination.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import Map from '../../image/Map.png'
+import MapContainer from '../MapContainer/MapContainer';
+
 
 const Destination = () => {
     const {name} = useParams();
@@ -44,11 +45,11 @@ const Destination = () => {
                     </div>}
                 </Col>
                 <Col md={8}>
-                    <img style={{width: '100%'}} src={Map} alt=""/>
+                    <MapContainer/>
                 </Col>    
             </Row>
         </Container>
     );
 };
 
-export default Destination;
+export default Destination
