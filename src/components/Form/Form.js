@@ -1,18 +1,18 @@
 import React, { useContext, useState } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from '../../firebaseConfig';
 import { UserContext } from '../../App';
 import SignUp from '../SignUp/SignUp';
 import LogIn from '../LogIn/LogIn';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import './Form.css'
+import { initializeFirebaseApp, handleSignIn } from './loginManager';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 
-if(!firebase.apps.length){
-    firebase.initializeApp(firebaseConfig);
-}
 const Form = () => {
+    initializeFirebaseApp()
     const [user, setUser] = useContext(UserContext);
     const [newUser, setNewUser] = useState(false);
     const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -21,39 +21,27 @@ const Form = () => {
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
-    const handleSignIn = (provider) => {
-        firebase.auth().signInWithPopup(provider).then((result) => {
-            var {displayName, email} = result.user;
-            const userInfo = {
-                name: displayName,
-                email: email,
-                error: '',
-                success: true
-            }
-            setUser(userInfo)
+    const signIn = (provider) => {
+        handleSignIn(user, provider)
+        .then(res => {
+            setUser(res);
             history.replace(from);
-        }).catch( error => {
-            const newUserInfo = {...user};
-            newUserInfo.error = error.message;
-            newUserInfo.success = false;
-            setUser(newUserInfo)
-        });
+        })
     }
     return (
-        <div className='form'>
-            {user.name}
+        <div className='formCard col-md-4'>
             {newUser ? <SignUp/> : <LogIn/>}
             {newUser ?
             <p>Already have an account? <Link to='/login' onClick={() => setNewUser(false)}>Login</Link></p> : 
             <p>Don't have an account? <Link to='/login' onClick={() => setNewUser(true)}>Create an account</Link></p> 
             }
-            <button onClick={() => handleSignIn(googleProvider)}>Continue with google</button>
+            <p>or</p>
+            <button className='googleBtn' onClick={() => signIn(googleProvider)}><FontAwesomeIcon icon={faGoogle} /> Continue with google</button>
             <br/>
-            <button onClick={() => handleSignIn(fbProvider)}>Continue with facebook</button>
+            <button className='facebookBtn' onClick={() => signIn(fbProvider)}><FontAwesomeIcon icon={faFacebook} /> Continue with facebook</button>
             <br/>
-            <button onClick={() => handleSignIn(ghProvider)}>Continue with github</button>
-            <p>{user.error}</p>
-            {user.success && <p> Your account has been {newUser ? 'created' : 'logged in'} successfully </p>}
+            <button className='githubBtn' onClick={() => signIn(ghProvider)}><FontAwesomeIcon icon={faGithub} /> Continue with github</button>
+            <p className="mt-3 text-danger">{user.error}</p>
         </div>
     );
 };

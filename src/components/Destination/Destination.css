@@ -1,0 +1,21 @@
+.searchForm {
+    padding: 3rem 2rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    border: 1px solid #7f8c8d;
+    background-color: #fff;
+}
+.searchForm h3 {
+    color: #0984E3;
+    padding-bottom: 0.5rem;
+    border-bottom: 4px solid #0984E3;
+}
+.departure {
+    color: #0984E3;
+    font-weight: 500;
+    margin: 0.4rem 0 0 0;
+}
+.date {
+    color: #0984E3;
+    margin-top: 0;
+}

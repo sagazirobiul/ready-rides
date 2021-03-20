@@ -3,6 +3,10 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import fakeData from '../../Data/fakeData.json'
 import DestinationInfo from '../DestinationInfo/DestinationInfo';
+import './Destination.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import Map from '../../image/Map.png'
 
 const Destination = () => {
     const {name} = useParams();
@@ -16,11 +20,8 @@ const Destination = () => {
         setDestination(destinationInfo);
     }
     const handleSubmit = (event) => {
-        if(name === undefined){
-            alert('Please go to the home page and choose your vehicle :)')
-        }
-        else{
-            event.preventDefault();
+        event.preventDefault();
+        if(name){
             setSubmitted(true)
         }
     }
@@ -28,22 +29,22 @@ const Destination = () => {
         <Container>
             <Row>
                 <Col md={4}>
+                    {name === undefined && <p className='text-center text-warning'>Please! go to the home page and choose your vehicle :)</p>}
                     { isSubmitted ?
                     <DestinationInfo selectedVehicle={selectedVehicle} destination={destination}/> : 
-                    <form onSubmit={handleSubmit}>
-                        <label for="from">Pick From</label>
-                        <br/>
-                        <input type="text" onBlur={handleOnBlur} name="from" id="from" required/>
-                        <br/>
-                        <label for="to">Pick To</label>
-                        <br/>
-                        <input type="text" onBlur={handleOnBlur} name="to" id="to" required/>
-                        <br/>
-                        <input type="submit" value='Search'/>
-                    </form>}
+                    <div className="searchForm">
+                        <form onSubmit={handleSubmit}>
+                            <h3 className="text-center"><FontAwesomeIcon icon={faSearch}/> Search for Ride</h3>
+                            <input type="text" onBlur={handleOnBlur} name="from" placeholder='Enter pickup location' required/>
+                            <input type="text" onBlur={handleOnBlur} name="to" placeholder='Enter destination' required/>
+                            <label for="date" className="departure">Departure :</label>
+                            <input type="date" onBlur={handleOnBlur} id="date" name="date" className='date' required/>
+                            <input type="submit" value='Search' className="submitBtn"/>
+                        </form>
+                    </div>}
                 </Col>
                 <Col md={8}>
-                    <img style={{width: '100%'}} src="https://www.thestatesman.com/wp-content/uploads/2020/04/googl_ED.jpg" alt=""/>
+                    <img style={{width: '100%'}} src={Map} alt=""/>
                 </Col>    
             </Row>
         </Container>

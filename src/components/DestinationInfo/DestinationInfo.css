@@ -1,6 +1,20 @@
+.timeline {
+    background:  #0984E3;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
 .vehicleInfo {
     width: 100%;
+    background-color: white;
+    color: #0984E3;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 .vehicleInfo img {
-    width: 30px;
+    width: 60px;
 }
+.price {
+    text-align: end;
+}
+

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Transport = ({vehicle}) => {
     const {name, image} = vehicle;
     return (
-        <Col md={3}>
+        <Col md={3} className='vehicle'>
             <Link to={`destination/${name}`}>
                 <Card className='vehiclesCard'>
                     <div className='card-img'>

@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
-import firebase from "firebase/app";
 import "firebase/auth";
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
+import { handleSignInWithEmail, onBlurHandler } from '../Form/loginManager';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+
 
 const LogIn = () => {
     const [user, setUser] = useContext(UserContext);
@@ -12,42 +15,26 @@ const LogIn = () => {
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
     const handleOnBlur = (event) => {
-        const {name, value} = event.target;
-        const newUserInfo = {...user};
-        newUserInfo[name] = value;
-        setUser(newUserInfo);
+        setUser(onBlurHandler(user, event))
     }
-    const onSubmit = (data) => {
-        firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-        .then((userCredential) => {
-          const {displayName, email} = userCredential.user;
-          const userInfo = {
-            name: displayName,
-            email: email,
-            error: '',
-            success: true
-            }
-          setUser(userInfo)
-          history.replace(from);
-          console.log('suncess login');
+    const onSubmit = () => {
+        handleSignInWithEmail(user)
+        .then(res => {
+            setUser(res)
+            history.replace(from);
         })
-        .catch((error) => {
-            const newUserInfo = {...user};
-            newUserInfo.error = error.message;
-            newUserInfo.success = false;
-            setUser(newUserInfo)
-        });
     }
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
+                <h2><span className='highlight'><FontAwesomeIcon icon={faUser} /></span> User Login</h2>
                 <input name="email" onBlur={handleOnBlur} ref={register({ required: true })} placeholder='Your email'/>
-                {errors.email && <span>Email is required</span>}
+                {errors.email && <span className='text-warning'>Email is required!</span>}
                 <br/>
                 <input type='password' name="password" onBlur={handleOnBlur} ref={register({ required: true })} placeholder='password'/>
-                {errors.password && <span>Password is required</span>}
+                {errors.password && <span className='text-warning'>Password is required!</span>}
                 <br/>
-                <input type="submit" value='Login'/>
+                <input type="submit" value='Login' className='submitBtn mt-4'/>
             </form>
         </div>
     );

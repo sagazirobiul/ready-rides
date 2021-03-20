@@ -1,32 +1,45 @@
 .nav-bar {
-    background-color: #20232A;
+    background-color: rgba(0, 0, 0, 0.5)!important;
     padding: 0!important;
 }
 .navBarMenu a {
     text-decoration: none;
     color: aliceblue;
-    padding: 0.3rem 1.8rem;
+    padding: 0.3rem 1.6rem;
     font-size: 1.6rem;
     border-bottom: 3px solid transparent;
 }
 
 .navBarMenu a:hover {
     text-decoration: none;
-    color: #00D2D3;
+    color: #0984e3;
 }
 
 .brandName a{
-    color: #00D2D3;
+    font-weight: bold;
+    color: #fff;
     padding: 1.2rem 1.8rem;
     font-size: 1.6rem;
     border-bottom: 3px solid transparent;
 }
-
+.highlight {
+    color: #0984e3;
+}
 .brandName a:hover {
     padding: 1.2rem 1.8rem;
     text-decoration: none;
-    color: #00D2D3;
 }
 .logo {
     margin-right: 0.5rem;
+}
+.navBtn{
+    font-weight: 600;
+    background: #0984e3;
+    border: 0;
+    color: #fff;
+    padding: 0.4rem 1.6rem;
+    border-radius: 0.3rem;
+}
+.navBtn:hover {
+    background: #0768b3;
 }

@@ -1,3 +1,72 @@
-.form {
-    margin: 100px;
+form {
+    display: inline;
+}
+.formCard {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem 2rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    border: 1px solid #7f8c8d;
+}
+.formCard P {
+    text-align: center;
+    font-size: 1.1rem;
+}
+.formCard span {
+    visibility: visible;
+}
+.formCard input {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    background-color: transparent;
+    color: #fff;
+}
+form input {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    border-bottom: 1px solid #0984E3;
+    outline: none;
+    border-radius: 0.5rem;
+}
+.formCard button {
+    width: 100%;
+    color: #fff;
+    outline: none;
+    border: 0;
+    padding: 0.7rem 0;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+}
+::placeholder {
+    color: #0984E3;
+    opacity: 1;
+  }
+.submitBtn{
+    background-color: #0984E3!important;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 0.6rem!important;
+}
+.submitBtn:hover {
+    background-color: #0e74c2!important;
+}
+form h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+.googleBtn {
+    background-color: #e74c3c;
+}
+.facebookBtn {
+    background-color: #297BE5;
+}
+.githubBtn {
+    background-color: #34495e;
 }

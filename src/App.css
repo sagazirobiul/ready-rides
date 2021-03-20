@@ -1,10 +1,28 @@
 .App {
-  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://www.binzel-abicor.com/uploads/Layout/Industries/Pictures/ABI_compo_Automotive_Transport_1000px.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  color: #ffffff;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.userHighlight {
+  text-align: end;
+  margin: 0.8rem 0;
+
+}
+
+.userHighlight P {
+  color: #0984E3;
+  display: inline;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-right: 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
