@@ -53,6 +53,7 @@ form input {
     font-weight: 500;
     font-size: 1.5rem;
     padding: 0.6rem!important;
+    color: #fff!important;
 }
 .submitBtn:hover {
     background-color: #0e74c2!important;
