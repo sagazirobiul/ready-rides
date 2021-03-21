@@ -2,10 +2,11 @@ form {
     display: inline;
 }
 .formCard {
-    margin: 2rem auto;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 3rem 2rem;
     border-radius: 0.5rem;
+    margin-top: 2rem;
     border: 1px solid #7f8c8d;
 }
 .formCard P {
