@@ -1,7 +1,7 @@
 import React from 'react';
 import './DestinationInfo.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faLongArrowAltDown, faCalendarWeek} from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCalendarWeek} from '@fortawesome/free-solid-svg-icons'
 
 
 const DestinationInfo = ({selectedVehicle, destination}) => {
@@ -10,10 +10,15 @@ const DestinationInfo = ({selectedVehicle, destination}) => {
     return (
         <div>
             <p className='vehicleInfo'><FontAwesomeIcon icon={faCalendarWeek}/> Date: {date}</p>
-            <div class="timeline">
-                <h2>{from}</h2>
-                <h3><FontAwesomeIcon icon={faLongArrowAltDown}/></h3>
-                <h2>{to}</h2>
+            <div className="timeline">
+                <div className="timeline-area">
+                    <div className="timeline-content">
+                        <h2>{from}</h2>
+                    </div>
+                    <div className="timeline-content timeline-content2">
+                        <h2>{to}</h2>
+                    </div>
+                </div>
             </div>
             {
                 more.map(({passenger, price}) => {

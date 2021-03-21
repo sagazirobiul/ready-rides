@@ -10,7 +10,7 @@ const MapContainer = () => {
     };
       
     const defaultCenter = {
-    lat: 41.3851, lng: 2.1734
+    lat: 23.810331, lng: 90.412521
     }
     return(
         <LoadScript
