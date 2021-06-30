@@ -1,0 +1,43 @@
+.reviewCard, .calculateAll {
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #0984E3;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.reviewCard img {
+    width: 50px;
+    background: white;
+    border-radius: 0.4rem;
+}
+.reviewCard p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.bookingTitle {
+    background-color: #0984E3;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+.calculateTitle {
+    border-bottom: 3px solid #0984E3;
+    padding-bottom: 0.5rem;
+}
+.calculateAll {
+    position: sticky;
+    top: 0;
+}
+.calculateAll p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.bookingAlert {
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+}

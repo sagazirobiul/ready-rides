@@ -46,7 +46,7 @@ const Destination = () => {
                 </Col>
                 <Col md={8}>
                     <MapContainer/>
-                </Col>    
+                </Col>
             </Row>
         </Container>
     );

@@ -1,12 +1,12 @@
 form {
     display: inline;
+    font-family: sans-serif;
 }
 .formCard {
-    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 3rem 2rem;
     border-radius: 0.5rem;
-    margin-top: 2rem;
+    margin: 1rem auto 0;
     border: 1px solid #7f8c8d;
 }
 .formCard P {
@@ -19,7 +19,7 @@ form {
 .formCard input {
     width: 100%;
     margin: 0.5rem 0;
-    padding: 0.8rem;
+    padding: 0.4rem;
     background-color: transparent;
     color: #fff;
 }
@@ -39,9 +39,9 @@ form input {
     color: #fff;
     outline: none;
     border: 0;
-    padding: 0.7rem 0;
+    padding: 0.4rem 0;
     margin-top: 0.5rem;
-    font-weight: 500;
+    font-weight: 400;
     border-radius: 0.5rem;
 }
 ::placeholder {
@@ -51,8 +51,8 @@ form input {
 .submitBtn{
     background-color: #0984E3!important;
     font-weight: 500;
-    font-size: 1.5rem;
-    padding: 0.6rem!important;
+    font-size: 1.2rem;
+    padding: 0.4rem!important;
     color: #fff!important;
 }
 .submitBtn:hover {
@@ -70,4 +70,14 @@ form h2 {
 }
 .githubBtn {
     background-color: #34495e;
+}
+
+
+.or::before,
+.or::after {
+    display: inline-block;
+    content: "";
+    border-top: 0.1rem solid #7f8c8d;
+    width: 30%;
+    margin: 0 1rem;
 }

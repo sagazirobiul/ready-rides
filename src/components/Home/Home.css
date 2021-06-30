@@ -1,3 +1,7 @@
 .companyName {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+.spinner img{
+    width: 50px;
+    margin-top: 15vh;
 }

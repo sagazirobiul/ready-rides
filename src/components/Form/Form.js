@@ -29,13 +29,13 @@ const Form = () => {
         })
     }
     return (
-        <div className='formCard col-md-4'>
+        <div className='formCard col-md-4 pb-3'>
             {newUser ? <SignUp/> : <LogIn/>}
             {newUser ?
             <p>Already have an account? <Link to='/login' onClick={() => setNewUser(false)}>Login</Link></p> : 
             <p>Don't have an account? <Link to='/login' onClick={() => setNewUser(true)}>Create an account</Link></p> 
             }
-            <p>or</p>
+            <p className="or">or</p>
             <button className='googleBtn' onClick={() => signIn(googleProvider)}><FontAwesomeIcon icon={faGoogle} /> Continue with google</button>
             <br/>
             <button className='facebookBtn' onClick={() => signIn(fbProvider)}><FontAwesomeIcon icon={faFacebook} /> Continue with facebook</button>

@@ -5,9 +5,10 @@
 .navBarMenu a {
     text-decoration: none;
     color: aliceblue;
-    padding: 0.3rem 1.6rem;
-    font-size: 1.6rem;
-    border-bottom: 3px solid transparent;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid transparent;
+    margin-top: 0.3rem;
 }
 
 .navBarMenu a:hover {
@@ -19,7 +20,7 @@
     font-weight: bold;
     color: #fff;
     padding: 1.2rem 1.8rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-bottom: 3px solid transparent;
 }
 .highlight {

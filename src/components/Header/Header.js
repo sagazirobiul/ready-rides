@@ -15,7 +15,7 @@ const Header = () => {
     }
     const menuStyle = {
         color: '#0984e3',
-        borderBottom: '3px solid #0984e3'
+        borderBottom: '2px solid #0984e3'
     }
     return (
         <Navbar bg="dark" expand="lg" className="nav-bar">
@@ -28,6 +28,7 @@ const Header = () => {
                     <Nav className="ml-auto navBarMenu" >
                         <NavLink activeStyle={menuStyle} exact to='/'>Home</NavLink>
                         <NavLink activeStyle={menuStyle} to='/destination'>Destination</NavLink>
+                        <NavLink activeStyle={menuStyle} to='/review'>Booking Review</NavLink>
                         <NavLink to='/login'>
                         {user.success ? <button className='navBtn' onClick={logOut}>Log Out</button>: 
                         <button className='navBtn'>Login</button>}

@@ -10,9 +10,15 @@
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+}
+.vehicleInfo:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .vehicleInfo img {
     width: 60px;
+    background: white;
+    border-radius: 0.4rem;
 }
 .price {
     text-align: end;
@@ -37,7 +43,7 @@
     border-radius: 50%;
     background-color: #fff;
     position: absolute;
-    left: -26px;
+    left: -25px;
 }
 .timeline-content2:before {
     top: 20px;
@@ -45,4 +51,11 @@
 .timeline-content2 > h2 {
     margin-top: 30px;
     text-align: bottom;
+}
+.alert {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    background-color: rgba(0,0,0,0.2);
+    color: rgb(13, 175, 13);
 }

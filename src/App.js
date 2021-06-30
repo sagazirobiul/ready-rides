@@ -13,6 +13,7 @@ import Form from './components/Form/Form';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import BookingReview from './components/BookingReview/BookingReview';
 
 
 export const UserContext = createContext();
@@ -24,9 +25,19 @@ function App() {
     error:'',
     success: false
   })
+  const [booking, setBooking] = useState({
+    form: '',
+    to: '',
+    date: '',
+    name: '',
+    image: '',
+    passenger:'',
+    price: ''
+  });
+  const [bookingInfo, setBookingInfo] = useState([])
   return (
     <div className='App'>
-      <UserContext.Provider value={[user, setUser]}>
+      <UserContext.Provider value={[user, setUser, booking, setBooking, bookingInfo, setBookingInfo]}>
         <Router>
           <Header/>
           <div className='userHighlight'>
@@ -38,6 +49,9 @@ function App() {
               </PrivateRoute>
               <PrivateRoute path="/destination">
                 <Destination />
+              </PrivateRoute>
+              <PrivateRoute path="/review">
+                <BookingReview/>
               </PrivateRoute>
               <Route path="/login">
                 <Form/>
